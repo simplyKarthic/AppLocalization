@@ -60,7 +60,15 @@ class AppLang extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Text(
-              AppLocalizations.of(context).translate('Message'),
+              AppLocalizations.of(context).translate('hello'),
+              style: TextStyle(fontSize: 32),
+            ),
+            Text(
+              AppLocalizations.of(context).translate('homePage.description'),
+              style: TextStyle(fontSize: 32),
+            ),
+            Text(
+              AppLocalizations.of(context).translate('homePage.button.one'),
               style: TextStyle(fontSize: 32),
             ),
             Row(

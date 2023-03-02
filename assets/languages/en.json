@@ -1,5 +1,13 @@
 {
   "title": "Flutter App",
   "hello": "Hello,",
-  "Message": "Welcome to my App!"
+  "Message": "Welcome to my App!",
+  "homePage": {
+    "hTitle": "Hello World",
+    "description": "order Now",
+    "button": {
+      "one": "one",
+      "two": "two"
+    }
+  }
 }

@@ -26,11 +26,20 @@ class AppLocalizations {
     await rootBundle.loadString('assets/languages/${locale.languageCode}.json');
     Map<String, dynamic> jsonMap = json.decode(jsonString);
 
-    _localizedStrings = jsonMap.map((key, value) {
-      return MapEntry(key, value.toString());
-    });
-
+    _localizedStrings = {};
+    _flattenMap(jsonMap, '', _localizedStrings);
     return true;
+  }
+
+  void _flattenMap(Map<String, dynamic> map, String prefix, Map<String, String> flattened) {
+    map.forEach((key, value) {
+      String fullKey = prefix.isEmpty ? key : '$prefix.$key';
+      if (value is Map<String, dynamic>) {
+        _flattenMap(value, fullKey, flattened);
+      } else {
+        flattened[fullKey] = value.toString();
+      }
+    });
   }
 
   // This method will be called from every widget which needs a localized text
